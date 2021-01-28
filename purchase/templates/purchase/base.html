@@ -1,0 +1,244 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>SafePurchase</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="{% static 'purchase/css/bootstrap.min.css' %}">
+  <!-- Material Design Bootstrap -->
+  <link rel="stylesheet" href="{% static 'purchase/css/mdb.min.css' %}">
+  <!-- Your custom styles (optional) -->
+  <link rel="stylesheet" href="{% static 'purchase/css/style.min.css' %}">
+    <link rel="icon" type="image/png"  href="{% static 'purchase/logo.png' %}">
+
+  <style type="text/css">
+    html,
+    body,
+    header,
+    .view {
+      height: 100%;
+    }
+
+    @media (max-width: 740px) {
+      html,
+      body,
+      header,
+      .view {
+        height: 1000px;
+      }
+    }
+
+    @media (min-width: 800px) and (max-width: 850px) {
+      html,
+      body,
+      header,
+      .view {
+        height: 650px;
+      }
+    }
+    @media (min-width: 800px) and (max-width: 850px) {
+              .navbar:not(.top-nav-collapse) {
+                  background: #1C2331!important;
+              }
+          }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
+    <div class="container">
+
+      <!-- Brand -->
+      <a class="navbar-brand" href="{% url 'home' %}">
+        <strong>Safe</strong><img src="{% static 'purchase/logo.png' %}" width="30" height="30" class="d-inline-block align-top"><strong>urchase</strong>
+      </a>
+      <!-- Collapse -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Links -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+{% if user.is_authenticated %}
+        <!-- Left -->
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'currentpurchases' %}">Current<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item {{ received }}">
+            <a class="nav-link" href="{% url 'receivedpurchases' %}">Received</a>
+          </li>
+          <li class="nav-item {{ create }}">
+            <a class="nav-link" href="{% url 'createpurchase' %}">Create</a>
+          </li>
+        </ul>
+ {% endif %}
+        <!-- Right -->
+<ul class="navbar-nav ml-auto">
+            {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <a href="#" onclick="$('#signOutBtn').click()" class="nav-link">Logout</a>
+                    <form style='display: none;' method="POST" action="{% url 'logoutuser' %}">
+                        {% csrf_token %}
+                        <button id="signOutBtn" type="submit">Logout</button>
+                    </form>
+                </li>
+            {% else %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'signupuser' %}">Sign Up</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'loginuser' %}">Login</a>
+                </li>
+            {% endif %}
+        </ul>
+
+      </div>
+
+    </div>
+  </nav>
+  <div class="container">
+{% block content %}{% endblock %}
+</div>
+  <!-- Navbar -->
+
+
+  <!--Footer-->
+  <footer class="page-footer text-center font-small mt-4 wow fadeIn">
+
+    <!-- Grid row -->
+    <div class="row mt-3">
+
+      <!-- Grid column -->
+      <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+
+        <!-- Content -->
+        <h6 class="text-uppercase font-weight-bold">Safe Purchase</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p>We exist to protect your online purchases</p>
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+
+        <!-- Links -->
+        <h6 class="text-uppercase font-weight-bold">Services</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p>
+          <a href="#!">Buyer</a>
+        </p>
+        <p>
+          <a href="#!">Seller</a>
+        </p>
+       <p>
+       <a href="#!">Support</a>
+       </p>
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+
+        <!-- Links -->
+        <h6 class="text-uppercase font-weight-bold">FAQs</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p>
+          <a href="#!">General</a>
+        </p>
+        <p>
+          <a href="#!">Help</a>
+        </p>
+        <p>
+          <a href="#!">Rates</a>
+        </p>
+
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+
+        <!-- Links -->
+        <h6 class="text-uppercase font-weight-bold">Contact</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p>
+          <i class="fas fa-home mr-3"></i> Kumasi, KNUST, Ghana</p>
+        <p>
+          <i class="fas fa-envelope mr-3"></i>Safepurchasegh@gmail.com</p>
+        <p>
+          <i class="fas fa-phone-square-alt mr-3"></i> +233 502850634</p>
+        <p>
+          <i class="fas fa-phone-square-alt mr-3"></i> +233 240429513</p>
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+
+    <hr class="my-4">
+
+    <!-- Social icons -->
+    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+      <a href="https://twitter.com/safepurchasegh" target="_blank">
+        <i class="fab fa-twitter mr-3"></i>
+      </a>
+
+      <a href="https://www.youtube.com/channel/UCxD1CdoJDUHjBkbFKYWTO1A" target="_blank">
+        <i class="fab fa-youtube mr-3"></i>
+      </a>
+
+      <a href="https://wa.link/qe2dr9" target="_blank">
+        <i class="fab fa-whatsapp mr-3"></i>
+      </a>
+
+      <a href="https://www.instagram.com/safepurchasegh/" target="_blank">
+        <i class="fab fa-instagram mr-3"></i>
+      </a>
+    </div>
+    <!-- Social icons -->
+
+    <!--Copyright-->
+    <div class="footer-copyright py-3">
+     © 2020 Copyright |
+      <a href="https://fastcreate.com" target="_blank">FastCreate.com</a>
+    </div>
+    <!--/.Copyright-->
+
+  </footer>
+  <!--/.Footer-->
+
+  <!-- SCRIPTS -->
+  <!-- JQuery -->
+    <script src="https://widget.northeurope.cloudapp.azure.com:9443/v0.1.0/mobile-money-widget-mtn.js"></script>
+   <script src="{% static 'purchase/js/jquery-3.4.1.min.js' %}" type="text/javascript"></script>
+  <!-- Bootstrap tooltips -->
+   <script src="{% static 'purchase/js/popper.min.js' %}" type="text/javascript"></script>
+  <!-- Bootstrap core JavaScript -->
+   <script src="{% static 'purchase/js/bootstrap.min.js' %}" type="text/javascript"></script>
+  <!-- MDB core JavaScript -->
+  <script src="{% static 'purchase/js/mdb.min.js' %}" type="text/javascript"></script>
+  <!-- Initializations -->
+  <script type="text/javascript">
+    // Animations initialization
+    new WOW().init();
+  </script>
+</body>
+
+</html>

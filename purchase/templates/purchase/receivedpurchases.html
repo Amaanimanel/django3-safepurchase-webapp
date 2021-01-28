@@ -1,0 +1,18 @@
+{% extends "purchase/base.html" %}
+
+{% block content %}
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-10">
+            <h1>Received Purchases</h1>
+        </div>
+    </div>
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-10">
+            <div class="list-group">
+                {% for purchase in purchases %}
+                    <a href="{% url 'viewreceivedpurchase' purchase.id %}" class="list-group-item list-group-item-action"><b>{{ purchase.title }}</b> : ₵{{ purchase.price }} - Received on {{ purchase.datereceived|date:'l jS F Y h:i A' }}</a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,431 @@
+
+{% extends "purchase/base.html" %}
+
+{% block content %}
+
+  <!--Main layout-->
+  <main>
+    <div class="container">
+
+      <!--Section: Main info-->
+      <section class="mt-5 wow fadeIn">
+
+        <!--Grid row-->
+        <div class="row">
+
+          <!--Grid column-->
+          <div class="col-md-6 mb-4">
+
+            <img src="static/purchase/pig.jpg" class="img-fluid z-depth-1-half" alt="">
+
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-md-6 mb-4">
+
+            <!-- Main heading -->
+            <h3 class="h3 mb-3">Tired of getting defrauded by online vendors?</h3>
+            <p>Simply create a purchase form with us when you buy from any
+              <strong>online</strong> vendor or website across the globe.</p>
+            <p>With your money safe in our trust, <b><i>SafePurchase</i></b> pays the vendors when they deliver exactly
+              what they advertised.</p>
+
+            <!-- Main heading -->
+
+            <hr>
+
+            <p>If the <strong>product</strong> is not delivered as <strong>advertised,</strong> return the product to the seller and we will you give your <strong>money back.</strong></p>
+
+            <!-- CTA -->
+            <a target="_blank" href="{% url 'createpurchase' %}" class="btn btn-indigo btn-md">Buy with us
+              <i class="fas fa-shopping-cart ml-1"></i>
+            </a>
+
+          </div>
+          <!--Grid column-->
+
+        </div>
+        <!--Grid row-->
+
+      </section>
+      <!--Section: Main info-->
+
+      <hr class="my-5">
+
+      <!--Section: Main features & Quick Start-->
+      <section>
+
+        <h3 class="h3 text-center mb-5">What is SafePurchase?</h3>
+
+        <!--Grid row-->
+        <div class="row wow fadeIn">
+
+          <!--Grid column-->
+          <div class="col-lg-6 col-md-12 px-4">
+
+            <!--First row-->
+            <div class="row">
+              <div class="col-1 mr-3">
+                <i class="fas fa-frown fa-2x indigo-text"></i>
+              </div>
+              <div class="col-10">
+                <h5 class="feature-title"></h5>
+                <p class="grey-text">We Know Buying And Selling Goods To Anonymous People On The Internet Can Be An Unsettling Experience
+                </p>
+              </div>
+            </div>
+            <!--/First row-->
+
+            <div style="height:30px"></div>
+
+            <!--Second row-->
+            <div class="row">
+              <div class="col-1 mr-3">
+                <i class="fas fa-gem fa-2x blue-text"></i>
+              </div>
+              <div class="col-10">
+                <h5 class="feature-title"></h5>
+                <p class="grey-text">Especially When It Comes To Expensive goods. From High-end designer outfits To the latest iphone ,
+                </p>
+              </div>
+            </div>
+            <!--/Second row-->
+
+            <div style="height:30px"></div>
+
+            <!--Third row-->
+            <div class="row">
+              <div class="col-1 mr-3">
+                <i class="fas fa-laugh-beam fa-2x cyan-text"></i>
+              </div>
+              <div class="col-10">
+                <h5 class="feature-title"></h5>
+                <p class="grey-text">You Can Safely And Easily Buy And Sell Merchandise All Over The World With The Protection Of <strong>SafePurchase</strong> payment Service.
+                  Both Buyers And Sellers Benefit From Using Our Website As A Neutral Third Party.</p>
+              </div>
+            </div>
+            <!--/Third row-->
+
+          </div>
+          <!--/Grid column-->
+
+          <!--Grid column-->
+          <div class="col-lg-6 col-md-12">
+
+            <p class="h5 text-center mb-4">Watch our "2 min Quick Start" tutorial</p>
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/cXTThxoywNQ" allowfullscreen></iframe>
+            </div>
+          </div>
+          <!--/Grid column-->
+
+        </div>
+        <!--/Grid row-->
+
+      </section>
+      <!--Section: Main features & Quick Start-->
+
+      <hr class="my-5">
+
+      <!--Section: Not enough-->
+      <section>
+
+        <h2 class="my-5 h3 text-center">What's in it for the buyer?</h2>
+
+        <!--First row-->
+        <div class="row features-small mb-5 mt-3 wow fadeIn">
+
+          <!--First column-->
+          <div class="col-md-4">
+            <!--First row-->
+            <div class="row">
+              <div class="col-2">
+                <i class="fas fa-check-square fa-2x green-text"></i>
+              </div>
+              <div class="col-10">
+                <h6 class="feature-title">Reliability</h6>
+                <p class="grey-text">SafePurchase is the number one online escrow service in Ghana
+                </p>
+                <div style="height:15px"></div>
+              </div>
+            </div>
+            <!--/First row-->
+
+            <!--Second row-->
+            <div class="row">
+              <div class="col-2">
+                <i class="fas fa-check-square fa-2x green-text"></i>
+              </div>
+              <div class="col-10">
+                <h6 class="feature-title">Quick and Secured</h6>
+                <p class="grey-text">Buyers can confidently submit payment of an item, up-front to SafePurchase
+                  without risk while the shipment of the item is still ongoing.
+                </p>
+                <div style="height:15px"></div>
+              </div>
+            </div>
+            <!--/Second row-->
+
+            <!--Third row-->
+            <div class="row">
+              <div class="col-2">
+                <i class="fas fa-check-square fa-2x green-text"></i>
+              </div>
+              <div class="col-10">
+                <h6 class="feature-title">User Friendly</h6>
+                <p class="grey-text">Safepurchase has a very simple process; you sign up and only input the name of the item and price. Escrow service has never been this easy in Ghana!  </p>
+                <div style="height:15px"></div>
+              </div>
+            </div>
+            <!--/Third row-->
+
+            <!--Fourth row-->
+            <div class="row">
+              <div class="col-2">
+                <i class="fas fa-check-square fa-2x green-text"></i>
+              </div>
+              <div class="col-10">
+                <h6 class="feature-title">Peace Of Mind</h6>
+                <p class="grey-text">There is no room for uncertainty or worries as the entire transaction is conducted under
+                  the supervision of SafePurchase's honest and diligent professionals.</p>
+                <div style="height:15px"></div>
+              </div>
+            </div>
+            <!--/Fourth row-->
+          </div>
+          <!--/First column-->
+
+          <!--Second column-->
+          <div class="col-md-4 flex-center">
+            <img src="static/purchase/fraud.jpg" alt="Giving out money" class="z-depth-0 img-fluid">
+          </div>
+          <!--/Second column-->
+
+          <!--Third column-->
+          <div class="col-md-4 mt-2">
+            <!--First row-->
+            <div class="row">
+              <div class="col-2">
+                <i class="fas fa-check-square fa-2x green-text"></i>
+              </div>
+              <div class="col-10">
+                <h6 class="feature-title">24/7 support</h6>
+                <p class="grey-text">Customer satisfaction is our priority. Do not hesitate to call our support lines with
+                  your questions and issues
+                </p>
+                <div style="height:15px"></div>
+              </div>
+            </div>
+            <!--/First row-->
+
+            <!--Second row-->
+            <div class="row">
+              <div class="col-2">
+                <i class="fas fa-check-square fa-2x green-text"></i>
+              </div>
+              <div class="col-10">
+                <h6 class="feature-title">Safety</h6>
+                <p class="grey-text">Contrary to popular belief, it is safer to conduct your transaction online because everything is documented,
+                  and there are no sensitive details on paper.</p>
+                <div style="height:15px"></div>
+              </div>
+            </div>
+            <!--/Second row-->
+
+            <!--Third row-->
+            <div class="row">
+              <div class="col-2">
+                <i class="fas fa-check-square fa-2x green-text"></i>
+              </div>
+              <div class="col-10">
+                <h6 class="feature-title">Momo Payments</h6>
+                <p class="grey-text">When paying with SafePurchase, you simply use your mobile money to process the transaction. Easy and convenient
+                </p>
+                <div style="height:15px"></div>
+              </div>
+            </div>
+            <!--/Third row-->
+
+            <!--Fourth row-->
+            <div class="row">
+              <div class="col-2">
+                <i class="fas fa-check-square fa-2x green-text"></i>
+              </div>
+              <div class="col-10">
+                <h6 class="feature-title">Affordable Rates</h6>
+                <p class="grey-text">SafePurchase escrow service only charges 2% on your purchases!</p>
+                <div style="height:15px"></div>
+              </div>
+            </div>
+            <!--/Fourth row-->
+          </div>
+          <!--/Third column-->
+
+        </div>
+        <!--/First row-->
+
+      </section>
+      <!--Section: Not enough-->
+
+      <hr class="mb-5">
+
+      <!--Section: More-->
+      <section>
+
+        <h2 class="my-5 h3 text-center">How does this benefits the seller?</h2>
+
+        <!--First row-->
+        <div class="row features-small mt-5 wow fadeIn">
+
+          <!--Grid column-->
+          <div class="col-xl-3 col-lg-6">
+            <!--Grid row-->
+            <div class="row">
+              <div class="col-2">
+                <i class="fas fa-handshake fa-2x mb-1 indigo-text" aria-hidden="true"></i>
+              </div>
+              <div class="col-10 mb-2 pl-3">
+                <h5 class="feature-title font-bold mb-1">Gains Trust</h5>
+                <p class="grey-text mt-2">Sellers that use SafePurchase are trusted by buyers to deliver as promised,
+                  hence more people will be willing to buy from you
+                </p>
+              </div>
+            </div>
+            <!--/Grid row-->
+          </div>
+          <!--/Grid column-->
+
+          <!--Grid column-->
+          <div class="col-xl-3 col-lg-6">
+            <!--Grid row-->
+            <div class="row">
+              <div class="col-2">
+                <i class="fas fa-truck fa-2x mb-1 indigo-text" aria-hidden="true"></i>
+              </div>
+              <div class="col-10 mb-2">
+                <h5 class="feature-title font-bold mb-1">Validates Order</h5>
+                <p class="grey-text mt-2">Sellers are protected against buyers walking away from the deal at the last minute
+                  without any good reason as buyers can't ask for refund until product is delivered
+                </p>
+              </div>
+            </div>
+            <!--/Grid row-->
+          </div>
+          <!--/Grid column-->
+
+          <!--Grid column-->
+          <div class="col-xl-3 col-lg-6">
+            <!--Grid row-->
+            <div class="row">
+              <div class="col-2">
+                <i class="fas fa-lock fa-2x mb-1 indigo-text" aria-hidden="true"></i>
+              </div>
+              <div class="col-10 mb-2">
+                <h5 class="feature-title font-bold mb-1">Peace of Mind</h5>
+                <p class="grey-text mt-2">With SafePurchase's reliable brand protecting your transaction, you can rest assured that your funds are in safe hands, free from fraud.
+                </p>
+              </div>
+            </div>
+            <!--/Grid row-->
+          </div>
+          <!--/Grid column-->
+
+          <!--Grid column-->
+          <div class="col-xl-3 col-lg-6">
+            <!--Grid row-->
+            <div class="row">
+              <div class="col-2">
+                <i class="fas fa-phone-alt fa-2x mb-1 indigo-text" aria-hidden="true"></i>
+              </div>
+              <div class="col-10 mb-2">
+                <h5 class="feature-title font-bold mb-1">24/7 support</h5>
+                <p class="grey-text mt-2">Do not hesitate to call our support lines with your questions and issues
+                </p>
+              </div>
+            </div>
+            <!--/Grid row-->
+          </div>
+          <!--/Grid column-->
+
+        </div>
+        <!--/First row-->
+
+        <!--Second row-->
+        <div class="row features-small mt-4 wow fadeIn">
+
+          <!--Grid column-->
+          <div class="col-xl-3 col-lg-6">
+            <!--Grid row-->
+            <div class="row">
+              <div class="col-2">
+                <i class="fas fa-money-bill-alt fa-2x mb-1 indigo-text" aria-hidden="true"></i>
+              </div>
+              <div class="col-10 mb-2">
+                <h5 class="feature-title font-bold mb-1">Zero Fees</h5>
+                <p class="grey-text mt-2">Buyers pay the transaction charges. You will receive the exact amount you charged for the item</p>
+              </div>
+            </div>
+            <!--/Grid row-->
+          </div>
+          <!--/Grid column-->
+
+          <!--Grid column-->
+          <div class="col-xl-3 col-lg-6">
+            <!--Grid row-->
+            <div class="row">
+              <div class="col-2">
+                <i class="fas fa-check-double fa-2x mb-1 indigo-text" aria-hidden="true"></i>
+              </div>
+              <div class="col-10 mb-2">
+                <h5 class="feature-title font-bold mb-1">Payment Confirmation</h5>
+                <p class="grey-text mt-2">Sellers have to confirm and agree on the price and the item buyers put in the form
+                </p>
+              </div>
+            </div>
+            <!--/Grid row-->
+          </div>
+          <!--/Grid column-->
+
+          <!--Grid column-->
+          <div class="col-xl-3 col-lg-6">
+            <!--Grid row-->
+            <div class="row">
+              <div class="col-2">
+                <i class="fas fa-thumbs-up fa-2x mb-1 indigo-text" aria-hidden="true"></i>
+              </div>
+              <div class="col-10 mb-2">
+                <h5 class="feature-title font-bold mb-1">Quick and Convenient</h5>
+                <p class="grey-text mt-2">No account creation needed, All you need to do it confirm the form the buyer sends to you</p>
+              </div>
+            </div>
+            <!--/Grid row-->
+          </div>
+          <!--/Grid column-->
+
+          <!--Grid column-->
+          <div class="col-xl-3 col-lg-6">
+            <!--Grid row-->
+            <div class="row">
+              <div class="col-2">
+                <i class="fas fa-mobile fa-2x mb-1 indigo-text" aria-hidden="true"></i>
+              </div>
+              <div class="col-10 mb-2">
+                <h5 class="feature-title font-bold mb-1">MoMo Payments</h5>
+                <p class="grey-text mt-2">Payment is made to your mobile money account as soon as the buyer receives their order</p>
+              </div>
+            </div>
+            <!--/Grid row-->
+          </div>
+          <!--/Grid column-->
+
+        </div>
+        <!--/Second row-->
+
+      </section>
+      <!--Section: More-->
+
+    </div>
+  </main>
+  <!--Main layout-->
+{% endblock %}
